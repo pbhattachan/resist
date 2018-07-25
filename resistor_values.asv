@@ -1,0 +1,30 @@
+%% Figure out location of all photos
+img_dir = 'C:\Users\presi\OneDrive\Documents\UW\BME\Co-op\Coop Spring 2018\resistor\';
+
+good_photos = 'C:\Users\presi\OneDrive\Documents\UW\BME\Co-op\Coop Spring 2018\resistor\resistor\';
+bad_photos =  'C:\Users\presi\OneDrive\Documents\UW\BME\Co-op\Coop Spring 2018\resistor\meme\';
+
+%% Display the image set
+
+imgSet = imageSet(img_dir, 'recursive');
+
+disp(['Your image set contains' num2str(sum(imgSet.Count)), ...
+    'images from ' num2str(numel(imgSet)) ' classes']);
+
+imageSetViewer(imgSet);
+
+%% Bag of Features
+bag = bagOfFeatures(imgSet,'VocabularySize',1000);
+
+%% Visualize Feature Vectors
+togglefig(
+
+%%
+
+% good_pictures = dir(strcat(good_photos,'*.jpg'));
+% bad_pictures = dir(strcat(bad_photos,'*.jpg'));
+% 
+% for i= 1:length(good_pictures)
+%     bruh = imread(strcat(good_photos,good_pictures(i).name));
+% end
+
